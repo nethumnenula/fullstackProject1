@@ -8,6 +8,8 @@ const workoutRoutes = require('./routes/workouts');
 const app = express();
 
 // middleware
+app.use(express.json());
+
 app.use((req, res, next) => {
     console.log("Middleware executed");
     console.log("Method:", req.method);
