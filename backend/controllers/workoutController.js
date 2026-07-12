@@ -1,7 +1,9 @@
 const Workout = require('../models/workoutModel');
 
 // GET all workouts
-
+const getWorkouts = async (req, res) => {
+    const workouts = await Workout.find({}).sort({createdAt: -1})
+}
 
 
 // GET a single workout
