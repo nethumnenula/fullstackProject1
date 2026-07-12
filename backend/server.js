@@ -6,10 +6,20 @@ const express = require("express");
 // express app
 const app = express();
 
+// middleware
+app.use((req, res, next) => {
+    console.log("Middleware executed");
+    console.log("Method:", req.method);
+    console.log("Path:", req.path);
+    next();
+});
+
 // routes
 app.get('/', (req, res) => {
     res.json({mssg: "Welcome to the app"});
-})
+});
+
+
 
 
 // listen for requests
