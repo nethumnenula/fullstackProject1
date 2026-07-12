@@ -1,1 +1,1 @@
-# MERN Application for Workouts Management System
+# MERN Application for a Workouts Management System
