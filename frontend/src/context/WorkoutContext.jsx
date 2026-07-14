@@ -17,15 +17,17 @@ export const workoutsReducer = (state, action) => {
   }
 };
 
-function WorkoutContextProvider({ children }) {
-  const [state, dispatch] = useReducer(workoutReducer, {
+export const WorkoutsContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(workoutsReducer, {
     workouts: null,
   });
 
   //dispatch({ type: "SET_WORKOUTS", payload: [{}, {}] });
   return (
-    <WorkoutsContext.Provider value={{state, dispatch}}>{children}</WorkoutsContext.Provider>
+    <WorkoutsContext.Provider value={{ ...state, dispatch }}>
+      {children}
+    </WorkoutsContext.Provider>
   );
 }
 
-export default WorkoutContextProvider;
+
